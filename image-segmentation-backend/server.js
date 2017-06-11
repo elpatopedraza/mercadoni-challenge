@@ -5,16 +5,16 @@
  * @version 1.0.0
  */
 
-var express = require('express');
-
 //Using 'express' in order to instantiate a server that listens a specific port.
-var app = express();
-var port = process.env.PORT || 3000;
+var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 3000;
 
-//Registers the API routes configuration.
-var routes = require('./api/routes/imageSegmentationRoutes');
-routes(app);
+//Library that allows to divide current web application in layers (controllers, services, daos).
+var Layers = require('layers').Express,
+    wiring = require('./api/wiring');
+new Layers(app, __dirname + '/api', wiring);
 
 app.listen(port);
 
-console.log('Image segmentation backend server started on port ' + port);
+console.log('Image segmentation backend server started on port %d', port);
