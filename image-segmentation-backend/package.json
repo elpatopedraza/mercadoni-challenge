@@ -1,0 +1,19 @@
+{
+  "name": "image-segmentation-backend",
+  "version": "1.0.0",
+  "description": "Image segmentation project for Mercadoni backend challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "andres.pedraza",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "jimp": "^0.2.28"
+  }
+}
